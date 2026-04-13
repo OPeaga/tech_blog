@@ -1,0 +1,83 @@
+[
+  {
+    "id": "p1",
+    "user": {
+      "id": "u1",
+      "name": "Lucas Mendes",
+      "img": "https://i.pravatar.cc/150?u=u1"
+    },
+    "theme": "Technology",
+    "subtheme": "TypeScript",
+    "text": "Union types changed how I think about publishedAt modeling.",
+    "publishedAt": "2024-11-01"
+  },
+  {
+    "id": "p2",
+    "user": {
+      "id": "u2",
+      "name": "Carla Souza",
+      "img": null
+    },
+    "theme": "Career",
+    "text": "Migrating from PL/SQL to JS is a wild ride.",
+    "publishedAt": "2025-01-15"
+  },
+  {
+    "id": "p3",
+    "user": {
+      "id": "u3",
+      "name": "Rafael Costa",
+      "img": "https://i.pravatar.cc/150?u=u3"
+    },
+    "theme": "Technology",
+    "subtheme": "Oracle",
+    "text": "Pipelined functions are underrated. Querying PL/SQL logic like a table is a game changer.",
+    "publishedAt": "2025-02-10"
+  },
+  {
+    "id": "p4",
+    "user": {
+      "id": "u4",
+      "name": "Fernanda Lima",
+      "img": null
+    },
+    "theme": "Career",
+    "text": "Three years as a DBA before touching JavaScript. The context switch is real.",
+    "publishedAt": "2025-03-01"
+  },
+  {
+    "id": "p5",
+    "user": {
+      "id": "u5",
+      "name": "Bruno Alves",
+      "img": "https://i.pravatar.cc/150?u=u5"
+    },
+    "theme": "Technology",
+    "subtheme": "Node.js",
+    "text": "Async/await saved me from callback hell. Now I just have promise hell.",
+    "publishedAt": "2025-03-18"
+  },
+  {
+    "id": "p6",
+    "user": {
+      "id": "u6",
+      "name": "Juliana Rocha",
+      "img": "https://i.pravatar.cc/150?u=u6"
+    },
+    "theme": "Technology",
+    "subtheme": "SQL",
+    "text": "CONNECT BY LEVEL is one of those Oracle tricks you don't forget once you learn it.",
+    "publishedAt": "2025-04-02"
+  },
+  {
+    "id": "p7",
+    "user": {
+      "id": "u7",
+      "name": "Marcos Teixeira",
+      "img": null
+    },
+    "theme": "Opinion",
+    "text": "Code review culture matters more than the stack you use.",
+    "publishedAt": "2025-04-09"
+  }
+]
