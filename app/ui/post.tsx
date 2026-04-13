@@ -10,37 +10,37 @@ export function Post({ user, theme, subtheme, text, publishedAt }: post) {
     .toUpperCase();
 
   return (
-    <article className="flex flex-col gap-3 p-4 border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+    <article className="flex flex-col gap-4 p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-l-slate-400">
       <header className="flex items-center gap-3">
         {user.img ? (
           <Image
             src={user.img}
             alt={user.name}
-            width={36}
-            height={36}
-            className="rounded-full object-cover"
+            width={40}
+            height={40}
+            className="rounded-full object-cover ring-2 ring-slate-200"
           />
         ) : (
-          <div className="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center text-sm font-semibold text-gray-600">
+          <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-sm font-bold text-slate-600 ring-2 ring-slate-300">
             {initials}
           </div>
         )}
         <div className="flex flex-col leading-tight">
-          <span className="text-sm font-semibold text-gray-900">
+          <span className="text-sm font-semibold text-slate-900">
             {user.name}
           </span>
-          <span className="text-xs text-gray-400">{publishedAt}</span>
+          <span className="text-xs text-slate-400">{publishedAt}</span>
         </div>
       </header>
 
-      <p className="text-sm text-gray-700 leading-relaxed">{text}</p>
+      <p className="text-sm text-slate-700 leading-relaxed">{text}</p>
 
-      <footer className="flex gap-2">
-        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
+      <footer className="flex gap-2 pt-1">
+        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 text-slate-700">
           {theme}
         </span>
         {subtheme && (
-          <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">
+          <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-500">
             {subtheme}
           </span>
         )}
