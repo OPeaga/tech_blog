@@ -22,6 +22,12 @@ export default function Navbar() {
         >
           About
         </Link>
+        <Link
+          href="./login"
+          className="text-slate-800 font-medium hover:text-slate-200 transition-colors text-sm uppercase tracking-wide"
+        >
+          Login
+        </Link>
       </div>
     </nav>
   );
