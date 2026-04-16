@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tech Blog
 
-## Getting Started
+## What is It
 
-First, run the development server:
+A personal tech blog built to share thoughts on software development, web technologies, clean architecture, and the craft of programming. The blog displays a list of posts on the home page and includes an About page describing the author's focus areas. A Login page is also present as the foundation for future authentication-protected features.
+
+---
+
+## Stack
+
+- **Next.js 16** — App Router, file-based routing, server components
+- **React 19** — UI rendering
+- **TypeScript 5** — static typing across the entire codebase
+- **Tailwind CSS 4** — utility-first styling
+- **Geist / Geist Mono** — fonts loaded via `next/font`
+
+---
+
+## Purposes
+
+- Study and practice modern Next.js patterns (App Router, layouts, server vs client components)
+- Build a real-world project from scratch, iterating on UI and features over time
+- Serve as a living portfolio piece documenting learning in public
+
+---
+
+## Latest Changes
+
+- Added **Login page** (`/login`) with email and password fields, client-side validation, and an inline error state
+- Added **Navbar link** pointing to the Login page
+- Added **About page** (`/about`) with a personal description and a list of content categories
+- Established base layout with a persistent **Navbar** and global Tailwind styles
+
+---
+
+## Install and Setup
+
+**Prerequisites:** Node.js 18 or later
+
+1. Clone the repository:
+
+```bash
+git clone <repo-url>
+cd blog
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open your browser at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Other scripts**
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Command         | Description                 |
+| --------------- | --------------------------- |
+| `npm run build` | Build for production        |
+| `npm run start` | Start the production server |
+| `npm run lint`  | Run ESLint                  |
