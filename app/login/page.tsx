@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import PageHeader from "@/app/ui/page-header";
+import LoadingOverlay from "@/app/ui/loading-overlay";
 import { btn, input } from "@/app/ui/templates/classnames";
 
 export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -19,11 +21,13 @@ export default function LoginPage() {
     }
 
     setError(null);
+    setLoading(true);
     // TODO: wire up authentication logic
   }
 
   return (
     <main className="flex-1">
+      {loading && <LoadingOverlay />}
       <PageHeader heading="Sign In" subheading="Welcome back to Tech Blog." />
 
       <div className="flex items-center justify-center px-6 py-12">
