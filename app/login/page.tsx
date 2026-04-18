@@ -24,11 +24,11 @@ export default function LoginPage() {
   return (
     <main className="flex-1 flex items-center justify-center px-6 py-16">
       <div className="w-full max-w-sm">
-        <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-sm border-t-4 border-t-slate-400">
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight mb-1">
+        <div className="p-8 bg-white rounded-2xl border border-zinc-200 shadow-sm border-t-4 border-t-zinc-900">
+          <h1 className="text-2xl font-bold text-zinc-900 tracking-tight mb-1">
             Sign in
           </h1>
-          <p className="text-sm text-slate-500 mb-7">
+          <p className="text-sm text-zinc-400 mb-7">
             Welcome back to Tech Blog.
           </p>
 
@@ -36,7 +36,7 @@ export default function LoginPage() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="email"
-                className="text-xs font-semibold text-slate-700 uppercase tracking-wide"
+                className="text-xs font-semibold text-zinc-700 uppercase tracking-wide"
               >
                 Email
               </label>
@@ -46,14 +46,14 @@ export default function LoginPage() {
                 type="email"
                 autoComplete="email"
                 placeholder="you@example.com"
-                className="px-3 py-2 rounded-lg border border-slate-300 bg-slate-50 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 transition"
+                className="px-3 py-2 rounded-lg border border-zinc-200 bg-zinc-50 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-400 transition"
               />
             </div>
 
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="password"
-                className="text-xs font-semibold text-slate-700 uppercase tracking-wide"
+                className="text-xs font-semibold text-zinc-700 uppercase tracking-wide"
               >
                 Password
               </label>
@@ -63,7 +63,7 @@ export default function LoginPage() {
                 type="password"
                 autoComplete="current-password"
                 placeholder="••••••••"
-                className="px-3 py-2 rounded-lg border border-slate-300 bg-slate-50 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 transition"
+                className="px-3 py-2 rounded-lg border border-zinc-200 bg-zinc-50 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-400 transition"
               />
             </div>
 
@@ -75,7 +75,7 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              className="mt-1 w-full py-2.5 rounded-lg bg-slate-800 text-white text-sm font-semibold hover:bg-slate-700 active:bg-slate-900 transition-colors"
+              className="mt-1 w-full py-2.5 rounded-lg bg-zinc-900 text-white text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-950 transition-colors"
             >
               Sign in
             </button>
