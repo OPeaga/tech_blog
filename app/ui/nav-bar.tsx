@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navLink } from "@/app/ui/templates/classnames";
+import { User } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -18,11 +19,14 @@ export default function Navbar() {
           Profile
         </Link>
         <Link href="/login" className={navLink.base}>
-          Login
+          <div className="flex gap-1.5">
+            Login
+            <User />
+          </div>
         </Link>
-        <Link href="/post/create" className={navLink.base}>
+        {/* <Link href="/post/create" className={navLink.base}>
           Create a Post
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );
