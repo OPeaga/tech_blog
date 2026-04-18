@@ -2,7 +2,7 @@
 
 ## What is It
 
-A personal tech blog built to share thoughts on software development, web technologies, clean architecture, and the craft of programming. The blog displays a list of posts on the home page and includes an About page describing the author's focus areas. A Login page is also present as the foundation for future authentication-protected features.
+A personal tech blog built to share thoughts on software development, web technologies, clean architecture, and the craft of programming. The blog displays posts on the home page, allows reading individual posts, and includes personal profile, about, and login pages. Data is served through a repository layer that reads from a local JSON file.
 
 ---
 
@@ -19,6 +19,7 @@ A personal tech blog built to share thoughts on software development, web techno
 ## Purposes
 
 - Study and practice modern Next.js patterns (App Router, layouts, server vs client components)
+- Apply clean architecture concepts with a repository pattern separating data access from the UI
 - Build a real-world project from scratch, iterating on UI and features over time
 - Serve as a living portfolio piece documenting learning in public
 
@@ -26,10 +27,11 @@ A personal tech blog built to share thoughts on software development, web techno
 
 ## Latest Changes
 
-- Added **Login page** (`/login`) with email and password fields, client-side validation, and an inline error state
-- Added **Navbar link** pointing to the Login page
-- Added **About page** (`/about`) with a personal description and a list of content categories
-- Established base layout with a persistent **Navbar** and global Tailwind styles
+- Introduced **Repository Pattern** — `PostRepository` interface with a `JsonPostRepository` implementation reading from a local JSON file, replacing direct data access in UI components
+- Added **Personal page** (`/personal`) with user profile card (name, email, bio, post count) and a filtered list of the user's own posts
+- Added **404 Not Found page** (`/[postId]/not-found.tsx`) with consistent design system styling
+- Refactored `posts.tsx` and `[postId]/page.tsx` to consume data via `postRepository` instead of raw fetch helpers
+- Navbar updated with a **Profile** link
 
 ---
 
@@ -41,7 +43,7 @@ A personal tech blog built to share thoughts on software development, web techno
 
 ```bash
 git clone <repo-url>
-cd blog
+cd blog_nextjs
 ```
 
 2. Install dependencies:
