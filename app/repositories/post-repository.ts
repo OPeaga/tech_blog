@@ -1,4 +1,4 @@
-import { post } from "../../types/blog";
+import { post } from "../types/blog";
 
 export interface PostRepository {
   findAll(): Promise<post[]>;

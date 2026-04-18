@@ -1,5 +1,5 @@
 import PostDetail from "../ui/post-details";
-import { postRepository } from "@/app/repositories/repository/post-json-repository";
+import { postRepository } from "@/app/repositories/post-json-repository";
 import { notFound } from "next/navigation";
 
 export default async function Page({

@@ -1,7 +1,7 @@
-import { fetchPosts } from "@/app/lib/data";
 import { Post } from "@/app/ui/post";
 import { title, text, tag, btn } from "@/app/ui/templates/classnames";
 import Link from "next/link";
+import { postRepository } from "../repositories/post-json-repository";
 
 const ME = {
   name: "Ph",
@@ -12,8 +12,8 @@ const ME = {
   joinedAt: "2024-01-01",
 };
 
-export default function PersonalPage() {
-  const { data: posts } = fetchPosts();
+export default async function PersonalPage() {
+  const posts = await postRepository.findAll();
   const myPosts = posts?.filter((p) => p.user.id === ME.id) ?? [];
 
   const initials = ME.name
