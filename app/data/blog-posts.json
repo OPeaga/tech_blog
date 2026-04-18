@@ -4,7 +4,9 @@
     "user": {
       "id": "u1",
       "name": "Lucas Mendes",
-      "img": "https://i.pravatar.cc/150?u=u1"
+      "img": "https://i.pravatar.cc/150?u=u1",
+      "bio": "",
+      "createdAt": ""
     },
     "theme": "Technology",
     "subtheme": "TypeScript",
@@ -16,7 +18,9 @@
     "user": {
       "id": "u2",
       "name": "Carla Souza",
-      "img": null
+      "img": null,
+      "bio": "",
+      "createdAt": ""
     },
     "theme": "Career",
     "text": "Migrating from PL/SQL to JS is a wild ride.",
@@ -27,7 +31,9 @@
     "user": {
       "id": "u3",
       "name": "Rafael Costa",
-      "img": "https://i.pravatar.cc/150?u=u3"
+      "img": "https://i.pravatar.cc/150?u=u3",
+      "bio": "",
+      "createdAt": ""
     },
     "theme": "Technology",
     "subtheme": "Oracle",
@@ -39,7 +45,9 @@
     "user": {
       "id": "u4",
       "name": "Fernanda Lima",
-      "img": null
+      "img": null,
+      "bio": "",
+      "createdAt": ""
     },
     "theme": "Career",
     "text": "Three years as a DBA before touching JavaScript. The context switch is real.",
@@ -50,7 +58,9 @@
     "user": {
       "id": "u5",
       "name": "Bruno Alves",
-      "img": "https://i.pravatar.cc/150?u=u5"
+      "img": "https://i.pravatar.cc/150?u=u5",
+      "bio": "",
+      "createdAt": ""
     },
     "theme": "Technology",
     "subtheme": "Node.js",
@@ -62,7 +72,9 @@
     "user": {
       "id": "u6",
       "name": "Juliana Rocha",
-      "img": "https://i.pravatar.cc/150?u=u6"
+      "img": "https://i.pravatar.cc/150?u=u6",
+      "bio": "",
+      "createdAt": ""
     },
     "theme": "Technology",
     "subtheme": "SQL",
@@ -74,7 +86,9 @@
     "user": {
       "id": "u7",
       "name": "Marcos Teixeira",
-      "img": null
+      "img": null,
+      "bio": "",
+      "createdAt": ""
     },
     "theme": "Opinion",
     "text": "Code review culture matters more than the stack you use.",

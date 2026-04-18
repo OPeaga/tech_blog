@@ -1,5 +1,6 @@
 import PostDetail from "../ui/post-details";
-import { fetchPostById } from "@/app/lib/action";
+import { postRepository } from "@/app/repositories/repository/post-json-repository";
+import { notFound } from "next/navigation";
 
 export default async function Page({
   params,
@@ -7,9 +8,15 @@ export default async function Page({
   params: Promise<{ postId: string }>;
 }) {
   const { postId } = await params;
-  const post = await fetchPostById(postId);
 
-  if (!post.data) {
+  let post = null;
+  try {
+    post = await postRepository.findById(postId);
+  } catch {
+    notFound();
+  }
+
+  if (!post) {
     return (
       <div className="max-w-2xl mx-auto px-6 py-12 text-slate-500">
         Post not found.
@@ -17,7 +24,5 @@ export default async function Page({
     );
   }
 
-  const data = post.data;
-
-  return <PostDetail prop={data} />;
+  return <PostDetail prop={post} />;
 }

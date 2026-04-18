@@ -2,6 +2,8 @@ export type user = {
   id: string;
   name: string;
   img: string | null;
+  bio: string;
+  createdAt: string;
 };
 
 export type post = {
@@ -12,5 +14,3 @@ export type post = {
   text: string;
   publishedAt: string;
 };
-
-export type postList = post[];
