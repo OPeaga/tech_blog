@@ -3,7 +3,7 @@ import Link from "next/link";
 import { navLink } from "@/app/ui/templates/classnames";
 import { User } from "lucide-react";
 import { LoginContext } from "../context";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export default function Navbar() {
   return (
