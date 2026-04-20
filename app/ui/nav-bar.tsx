@@ -20,9 +20,9 @@ export default function Navbar() {
         </Link>
         {!useContext(LoginContext).id && (
           <Link href="/login" className={navLink.base}>
-            <div className="flex gap-1.5">
+            <div className="flex items-center gap-1.5">
               Login
-              <User />
+              <User size={16} />
             </div>
           </Link>
         )}
