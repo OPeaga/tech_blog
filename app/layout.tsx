@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/ui/nav-bar";
+import LoginProvider from "@/app/ui/login-provider";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -30,8 +31,10 @@ export default function RootLayout({
       className={`${montserrat.variable} ${roboto.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900">
-        <Navbar />
-        {children}
+        <LoginProvider>
+          <Navbar />
+          {children}
+        </LoginProvider>
       </body>
     </html>
   );

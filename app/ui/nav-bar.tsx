@@ -7,7 +7,11 @@ import { useContext } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 export default function Navbar() {
-  const { id, name } = useContext(LoginContext);
+  const { id, name, setLoginContext } = useContext(LoginContext);
+
+  function signOut() {
+    setLoginContext({ id: "", name: "" });
+  }
 
   return (
     <nav className="bg-zinc-950 px-8 py-4 flex items-center justify-between sticky top-0 z-10 border-b border-zinc-800/60">
@@ -74,7 +78,9 @@ export default function Navbar() {
               </div>
               <div className="border-t border-zinc-800 p-1">
                 <MenuItem>
-                  <button className="group flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-red-400 data-[focus]:bg-zinc-800 data-[focus]:text-red-300 transition-colors duration-100 cursor-pointer">
+                  <button 
+                    onClick={signOut}
+                    className="group flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-red-400 data-[focus]:bg-zinc-800 data-[focus]:text-red-300 transition-colors duration-100 cursor-pointer">
                     <LogOut
                       size={14}
                       className="text-red-500/70 group-data-[focus]:text-red-400"

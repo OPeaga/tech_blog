@@ -1,4 +1,14 @@
 "use client";
 import { createContext } from "react";
 
-export const LoginContext = createContext({ id: "123131", name: "" });
+type LoginContextType = {
+  id: string;
+  name: string;
+  setLoginContext: (data: { id: string; name: string }) => void;
+};
+
+export const LoginContext = createContext<LoginContextType>({
+  id: "",
+  name: "",
+  setLoginContext: () => {},
+});
