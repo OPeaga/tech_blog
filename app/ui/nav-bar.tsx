@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
 import { navLink } from "@/app/ui/templates/classnames";
 import { User } from "lucide-react";
+import { LoginContext } from "../context";
+import { useContext, useState } from "react";
 
 export default function Navbar() {
   return (
@@ -15,18 +18,24 @@ export default function Navbar() {
         <Link href="/about" className={navLink.base}>
           About
         </Link>
-        <Link href="/personal" className={navLink.base}>
-          Profile
-        </Link>
-        <Link href="/login" className={navLink.base}>
-          <div className="flex gap-1.5">
-            Login
-            <User />
-          </div>
-        </Link>
-        {/* <Link href="/post/create" className={navLink.base}>
-          Create a Post
-        </Link> */}
+        {!useContext(LoginContext).id && (
+          <Link href="/login" className={navLink.base}>
+            <div className="flex gap-1.5">
+              Login
+              <User />
+            </div>
+          </Link>
+        )}
+        {useContext(LoginContext).id && (
+          <>
+            <Link href="/personal" className={navLink.base}>
+              Profile
+            </Link>
+            <Link href="/post/create" className={navLink.base}>
+              Create a Post
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );
