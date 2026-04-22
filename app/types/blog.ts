@@ -2,7 +2,7 @@ export type user = {
   id: string;
   name: string;
   img: string | null;
-  bio: string;
+  bio?: string;
   createdAt: string;
 };
 

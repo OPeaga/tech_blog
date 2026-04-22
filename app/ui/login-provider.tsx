@@ -7,7 +7,7 @@ export default function LoginProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [user, setUser] = useState({ id: "1231", name: "" });
+  const [user, setUser] = useState({ id: "12", name: "Pedro" });
 
   return (
     <LoginContext.Provider value={{ ...user, setLoginContext: setUser }}>

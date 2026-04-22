@@ -1,5 +1,5 @@
 import { post } from "@/app/types/blog";
-import { PostRepository } from "./post-repository";
+import { crudState, PostRepository } from "./post-repository";
 import { resolve } from "path";
 import { readFile } from "fs/promises";
 
@@ -31,6 +31,32 @@ export class JsonPostRepository implements PostRepository {
     }
 
     return post;
+  }
+
+  async updatePost(
+    prevState: crudState,
+    Formdata: FormData,
+  ): Promise<crudState> {
+    return {
+      message: "",
+      errors: {
+        theme: [],
+        text: [],
+      },
+    };
+  }
+
+  async createPost(
+    prevState: crudState,
+    Formdata: FormData,
+  ): Promise<crudState> {
+    return {
+      message: "",
+      errors: {
+        theme: [],
+        text: [],
+      },
+    } as crudState;
   }
 }
 
