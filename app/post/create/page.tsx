@@ -4,13 +4,10 @@ import { useRouter } from "next/navigation";
 import PageHeader from "@/app/ui/page-header";
 import { btn, input } from "@/app/ui/templates/classnames";
 import { useActionState } from "react";
+import { createPost } from "@/app/services/post-service";
 
 export default function CreatePostPage() {
   const router = useRouter();
-
-  const createPost = () => {
-    return { message: "ok", errors: {} };
-  };
 
   const initialState = { message: "", errors: {} };
 
@@ -24,7 +21,7 @@ export default function CreatePostPage() {
       />
 
       <div className="max-w-2xl mx-auto px-6 py-12">
-        <form onSubmit={formAction} className="flex flex-col gap-6">
+        <form action={formAction} className="flex flex-col gap-6">
           <div className="grid grid-cols-2 gap-4">
             <div className={input.wrapper}>
               <label htmlFor="theme" className={input.label}>

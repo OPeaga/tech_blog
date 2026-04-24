@@ -1,13 +1,16 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLink } from "@/app/ui/templates/classnames";
-import { User, PenSquare, LogOut, ChevronDown } from "lucide-react";
-import { LoginContext } from "../context";
+import { User, PenSquare, LogOut, ChevronDown, Code2 } from "lucide-react";
+import { LoginContext } from "../contexts/context";
 import { useContext } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 export default function Navbar() {
   const { id, name, setLoginContext } = useContext(LoginContext);
+
+  const path = usePathname();
 
   function signOut() {
     setLoginContext({ id: "", name: "" });
@@ -16,13 +19,19 @@ export default function Navbar() {
   return (
     <nav className="bg-zinc-950 px-8 py-4 flex items-center justify-between sticky top-0 z-10 border-b border-zinc-800/60">
       <Link href="/" className={navLink.brand}>
+        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-900 border border-zinc-700/60 text-zinc-100 shadow-[0_0_12px_rgba(255,255,255,0.05)]">
+          <Code2 size={16} strokeWidth={2.5} />
+        </div>
         Tech Blog
       </Link>
       <div className="flex items-center gap-8">
-        <Link href="/" className={navLink.base}>
+        <Link href="/" className={path === "/" ? navLink.active : navLink.base}>
           Home
         </Link>
-        <Link href="/about" className={navLink.base}>
+        <Link
+          href="/about"
+          className={path === "/about" ? navLink.active : navLink.base}
+        >
           About
         </Link>
         {!id && (
@@ -78,9 +87,10 @@ export default function Navbar() {
               </div>
               <div className="border-t border-zinc-800 p-1">
                 <MenuItem>
-                  <button 
+                  <button
                     onClick={signOut}
-                    className="group flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-red-400 data-[focus]:bg-zinc-800 data-[focus]:text-red-300 transition-colors duration-100 cursor-pointer">
+                    className="group flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-red-400 data-[focus]:bg-zinc-800 data-[focus]:text-red-300 transition-colors duration-100 cursor-pointer"
+                  >
                     <LogOut
                       size={14}
                       className="text-red-500/70 group-data-[focus]:text-red-400"

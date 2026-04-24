@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { LoginContext } from "../context";
+import { LoginContext } from "../contexts/context";
 
 export default function LoginProvider({
   children,
