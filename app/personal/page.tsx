@@ -1,7 +1,7 @@
 import { Post } from "@/app/ui/post";
 import { title, text, tag, btn } from "@/app/ui/templates/classnames";
 import Link from "next/link";
-import { postRepository } from "../repositories/post-json-repository";
+import { postRepository } from "../repositories/post-postgres-respository";
 
 const ME = {
   name: "Ph",
@@ -14,6 +14,7 @@ const ME = {
 
 export default async function PersonalPage() {
   const posts = await postRepository.findAll();
+
   const myPosts = posts?.filter((p) => p.user.id === ME.id) ?? [];
 
   const initials = ME.name

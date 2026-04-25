@@ -60,7 +60,7 @@ export class PostgressPostRepository implements PostRepository {
   }
 
   async updatePost(
-    prevState: crudState,
+    // prevState: crudState,
     formData: FormData,
   ): Promise<crudState> {
     const id = formData.get("id") as string;
@@ -90,7 +90,7 @@ export class PostgressPostRepository implements PostRepository {
   }
 
   async createPost(
-    prevState: crudState,
+    // prevState: crudState,
     formData: FormData,
   ): Promise<crudState> {
     // const userId = formData.get("userId") as string;

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { post } from "@/app/types/blog";
 
-export default async function PostDetails({ prop }: { prop: post }) {
+export default function PostDetails({ prop }: { prop: post }) {
   const { user, publishedAt, theme, subtheme, text: postText } = prop;
 
   const initials = user.name
@@ -15,7 +15,6 @@ export default async function PostDetails({ prop }: { prop: post }) {
   return (
     <div className="flex-1 bg-zinc-50 w-full py-12 sm:py-20 flex justify-center px-4 sm:px-6">
       <article className="w-full max-w-2xl bg-white border border-zinc-200 shadow-sm rounded-2xl p-8 sm:p-12 flex flex-col gap-8">
-        
         {/* Header */}
         <header className="flex items-center gap-4">
           {user.img ? (
@@ -32,8 +31,12 @@ export default async function PostDetails({ prop }: { prop: post }) {
             </div>
           )}
           <div className="flex flex-col gap-0.5">
-            <span className="font-semibold text-zinc-900 text-lg tracking-tight">{user.name}</span>
-            <span className="text-xs font-medium text-slate-500 uppercase tracking-widest">{publishedAt}</span>
+            <span className="font-semibold text-zinc-900 text-lg tracking-tight">
+              {user.name}
+            </span>
+            <span className="text-xs font-medium text-slate-500 uppercase tracking-widest">
+              {publishedAt}
+            </span>
           </div>
         </header>
 
@@ -55,10 +58,22 @@ export default async function PostDetails({ prop }: { prop: post }) {
             )}
           </div>
 
-          <Link href="./" className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
+          <Link
+            href="./"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors duration-200"
+          >
             <span className="group-hover:-translate-x-1 transition-transform duration-200 flex items-center justify-center w-6 h-6 rounded-full bg-zinc-100 group-hover:bg-zinc-200">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
             </span>
             Back to posts

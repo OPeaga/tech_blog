@@ -31,6 +31,7 @@ export const input = {
   wrapper: "flex flex-col",
   row: "flex items-center gap-2",
   error: `${r} flex items-center gap-1.5 text-xs font-medium text-red-600 bg-red-50 border border-red-200 rounded-xl px-3.5 py-2.5`,
+  fieldError: `${r} text-xs text-red-500 font-medium mt-1`,
   hint: `${r} text-xs text-zinc-400 mt-1`,
 };
 

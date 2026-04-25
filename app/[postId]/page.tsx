@@ -1,6 +1,18 @@
 import PostDetail from "../ui/post-details";
-import { postRepository } from "@/app/repositories/post-json-repository";
+import { postRepository } from "@/app/repositories/post-postgres-respository";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+
+async function PostFetcher({ id }: { id: string }) {
+  let post = null;
+  try {
+    post = await postRepository.findById(id);
+  } catch {
+    notFound();
+  }
+
+  return <PostDetail prop={post} />;
+}
 
 export default async function Page({
   params,
@@ -9,20 +21,15 @@ export default async function Page({
 }) {
   const { postId } = await params;
 
-  let post = null;
-  try {
-    post = await postRepository.findById(postId);
-  } catch {
-    notFound();
-  }
-
-  if (!post) {
-    return (
-      <div className="max-w-2xl mx-auto px-6 py-12 text-slate-500">
-        Post not found.
-      </div>
-    );
-  }
-
-  return <PostDetail prop={post} />;
+  return (
+    <Suspense
+      fallback={
+        <div className="flex justify-center p-12 text-zinc-500">
+          Loading post...
+        </div>
+      }
+    >
+      <PostFetcher id={postId} />
+    </Suspense>
+  );
 }

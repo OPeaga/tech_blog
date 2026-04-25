@@ -4,14 +4,17 @@ import { useRouter } from "next/navigation";
 import PageHeader from "@/app/ui/page-header";
 import { btn, input } from "@/app/ui/templates/classnames";
 import { useActionState } from "react";
-import { createPost } from "@/app/services/post-service";
+import { createPostController } from "@/app/controllers/post-controller";
 
 export default function CreatePostPage() {
   const router = useRouter();
 
   const initialState = { message: "", errors: {} };
 
-  const [state, formAction] = useActionState(createPost, initialState);
+  const [state, formAction] = useActionState(
+    createPostController,
+    initialState,
+  );
 
   return (
     <main className="flex-1">
@@ -34,6 +37,13 @@ export default function CreatePostPage() {
                 placeholder="e.g. JavaScript"
                 className={input.field}
               />
+              {state.errors?.theme && (
+                <div className={input.fieldError}>
+                  {state.errors.theme.map((error, index) => (
+                    <p key={index}>{error}</p>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className={input.wrapper}>
@@ -62,9 +72,16 @@ export default function CreatePostPage() {
               placeholder="Write your post here..."
               className={input.textarea}
             />
+            {state.errors?.text && (
+              <div className={input.fieldError}>
+                <ul>
+                  {state.errors.text.map((error, index) => (
+                    <li key={index}>{error}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-
-          {/* {state.errors && state.errors} */}
 
           <div className="flex items-center justify-end gap-3 pt-2">
             <button

@@ -34,7 +34,7 @@ export class JsonPostRepository implements PostRepository {
   }
 
   async updatePost(
-    prevState: crudState,
+    // prevState: crudState,
     Formdata: FormData,
   ): Promise<crudState> {
     return {
@@ -47,7 +47,7 @@ export class JsonPostRepository implements PostRepository {
   }
 
   async createPost(
-    prevState: crudState,
+    // prevState: crudState,
     Formdata: FormData,
   ): Promise<crudState> {
     return {

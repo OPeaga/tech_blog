@@ -1,4 +1,4 @@
-import { postRepository } from "@/app/repositories/post-json-repository";
+import { postRepository } from "@/app/repositories/post-postgres-respository";
 import { Post } from "./post";
 
 export default async function Posts() {
