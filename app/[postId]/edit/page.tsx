@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { postRepository } from "@/app/repositories/post-json-repository";
+import { findPostByIdController } from "@/app/controllers/post-controller";
 import EditPostForm from "../../ui/edit-post-form";
 
 export default async function Page({
@@ -11,7 +11,7 @@ export default async function Page({
 
   let post = null;
   try {
-    post = await postRepository.findById(postId);
+    post = await findPostByIdController(postId);
   } catch {
     notFound();
   }

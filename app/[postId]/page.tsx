@@ -1,12 +1,12 @@
 import PostDetail from "../ui/post-details";
-import { postRepository } from "@/app/repositories/post-postgres-respository";
+import { findPostByIdController } from "@/app/controllers/post-controller";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 async function PostFetcher({ id }: { id: string }) {
   let post = null;
   try {
-    post = await postRepository.findById(id);
+    post = await findPostByIdController(id);
   } catch {
     notFound();
   }

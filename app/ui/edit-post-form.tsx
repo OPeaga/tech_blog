@@ -5,17 +5,17 @@ import PageHeader from "@/app/ui/page-header";
 import { btn, input } from "@/app/ui/templates/classnames";
 import { useActionState } from "react";
 import { post } from "@/app/types/blog";
+import { updatePostController } from "@/app/controllers/post-controller";
 
 export default function EditPostForm({ post }: { post: post }) {
   const router = useRouter();
 
-  const updatePost = () => {
-    return { message: "ok", errors: {} };
-  };
-
   const initialState = { message: "", errors: {} };
 
-  const [state, formAction] = useActionState(updatePost, initialState);
+  const [state, formAction] = useActionState(
+    updatePostController,
+    initialState,
+  );
 
   return (
     <main className="flex-1">
@@ -25,7 +25,9 @@ export default function EditPostForm({ post }: { post: post }) {
       />
 
       <div className="max-w-2xl mx-auto px-6 py-12">
-        <form onSubmit={formAction} className="flex flex-col gap-6">
+        <form action={formAction} className="flex flex-col gap-6">
+          <input type="hidden" name="id" value={post.id} />
+
           <div className="grid grid-cols-2 gap-4">
             <div className={input.wrapper}>
               <label htmlFor="theme" className={input.label}>
@@ -39,6 +41,13 @@ export default function EditPostForm({ post }: { post: post }) {
                 defaultValue={post.theme}
                 className={input.field}
               />
+              {state.errors?.theme && (
+                <div className={input.fieldError}>
+                  {state.errors.theme.map((error, index) => (
+                    <p key={index}>{error}</p>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className={input.wrapper}>
@@ -69,6 +78,15 @@ export default function EditPostForm({ post }: { post: post }) {
               defaultValue={post.text}
               className={input.textarea}
             />
+            {state.errors?.text && (
+              <div className={input.fieldError}>
+                <ul>
+                  {state.errors.text.map((error, index) => (
+                    <li key={index}>{error}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
           <div className="flex items-center justify-end gap-3 pt-2">
@@ -88,3 +106,4 @@ export default function EditPostForm({ post }: { post: post }) {
     </main>
   );
 }
+

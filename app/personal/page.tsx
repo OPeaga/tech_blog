@@ -1,7 +1,7 @@
 import { Post } from "@/app/ui/post";
 import { title, text, tag, btn } from "@/app/ui/templates/classnames";
 import Link from "next/link";
-import { postRepository } from "../repositories/post-postgres-respository";
+import { findAllPostsController } from "@/app/controllers/post-controller";
 
 const ME = {
   name: "Ph",
@@ -13,7 +13,7 @@ const ME = {
 };
 
 export default async function PersonalPage() {
-  const posts = await postRepository.findAll();
+  const posts = await findAllPostsController();
 
   const myPosts = posts?.filter((p) => p.user.id === ME.id) ?? [];
 
