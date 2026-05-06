@@ -57,17 +57,17 @@ export default function Navbar() {
 
             <MenuItems
               anchor="bottom end"
-              className="mt-2 w-48 rounded-xl border border-zinc-700/50 bg-black/100 backdrop-blur-md shadow-xl shadow-black/50 focus:outline-none z-50"
+              className="mt-2 w-48 rounded-xl border border-zinc-700/50 bg-black backdrop-blur-md shadow-xl shadow-black/50 focus:outline-none z-50"
             >
               <div className="p-1">
                 <MenuItem>
                   <Link
                     href="/post/create"
-                    className="group flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-zinc-300 data-[focus]:bg-zinc-800 data-[focus]:text-zinc-100 transition-colors duration-100"
+                    className="group flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-zinc-300 data-focus:bg-zinc-800 data-focus:text-zinc-100 transition-colors duration-100"
                   >
                     <PenSquare
                       size={14}
-                      className="text-zinc-500 group-data-[focus]:text-zinc-300"
+                      className="text-zinc-500 group-data-focus:text-zinc-300"
                     />
                     Create a Post
                   </Link>
@@ -75,11 +75,11 @@ export default function Navbar() {
                 <MenuItem>
                   <Link
                     href="/personal"
-                    className="group flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-zinc-300 data-[focus]:bg-zinc-800 data-[focus]:text-zinc-100 transition-colors duration-100"
+                    className="group flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-zinc-300 group-data-focus:text-zinc-300 transition-colors duration-100"
                   >
                     <User
                       size={14}
-                      className="text-zinc-500 group-data-[focus]:text-zinc-300"
+                      className="text-zinc-500 group-data-focus:text-zinc-300"
                     />
                     Profile
                   </Link>
@@ -89,11 +89,11 @@ export default function Navbar() {
                 <MenuItem>
                   <button
                     onClick={signOut}
-                    className="group flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-red-400 data-[focus]:bg-zinc-800 data-[focus]:text-red-300 transition-colors duration-100 cursor-pointer"
+                    className="group flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-red-400 data-focus:bg-zinc-800 data-focus:text-red-300 transition-colors duration-100 cursor-pointer"
                   >
                     <LogOut
                       size={14}
-                      className="text-red-500/70 group-data-[focus]:text-red-400"
+                      className="text-red-500/70 group-data-focus:text-red-400"
                     />
                     Sign Out
                   </button>
